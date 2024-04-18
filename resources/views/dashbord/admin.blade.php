@@ -262,7 +262,7 @@ Admin
 
 @endsection
 
-@section('script')
+@section('scripts')
 <script src="backend/js/dashboard.js"></script>
 @endsection
 

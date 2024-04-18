@@ -6,20 +6,20 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function home(){
-        return view('client.home');
+    public function accueil(){
+        return view('client.accueil');
     }
 
-    public function shop(){
-        return view('client.shop');
+    public function produit(){
+        return view('client.produit');
     }
 
-    public function checkout(){
-        return view('client.checkout');
+    public function paiement(){
+        return view('client.paiement');
     }
 
-    public function cart(){
-        return view('client.cart');
+    public function panier(){
+        return view('client.panier');
     }
 
 

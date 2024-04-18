@@ -18,18 +18,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/home', 'ClientController@home');
+Route::get('/accueil', 'ClientController@accueil');
 Route::get('/admin', 'AdminController@admin');
-Route::get('/shop', 'ClientController@shop');
-Route::get('/checkout', 'ClientController@checkout');
-Route::get('/cart', 'ClientController@cart');
+Route::get('/produit', 'ClientController@produit');
+Route::get('/paiement', 'ClientController@paiement');
+Route::get('/panier', 'ClientController@panier');
 Route::get('/login', 'AdminController@login');
 Route::get('/contact', 'ClientController@contact');
 Route::get('/validation', 'AdminController@validation');
 Route::get('/data-table', 'AdminController@datatable');
-Route::get('/ajoutercategorie', 'CategoryController@ajoutercategory');
+Route::get('/ajoutercategorie', 'CategoryController@ajoutercategorie');
 Route::get('/inscrire', 'ClientController@inscription');
 Route::get('/connecter', 'ClientController@connecter');
+Route::get('/sauvercategorie', 'CategoryController@sauvercategorie');
 
 
 

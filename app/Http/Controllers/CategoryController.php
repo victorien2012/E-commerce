@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function ajoutercategory(){
+    public function ajoutercategorie(){
         return view('dashbord.ajoutercategorie');
+    }
+
+    public function sauvercategorie(Request $request){
+        // return view('dashbord.data-table');
     }
 }

@@ -32,7 +32,7 @@
             <li class="nav-item"> <a class="nav-link" href="basic-table.html">Catégories</a></li>
             <li class="nav-item"> <a class="nav-link" href="data-table.html">Produits</a></li>
             <li class="nav-item"> <a class="nav-link" href="js-grid.html">Sliders</a></li>
-            <li class="nav-item"> <a class="nav-link" href="sortable-table.html">CommandeS</a></li>
+            <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Commandes</a></li>
           </ul>
         </div>
       </li>
