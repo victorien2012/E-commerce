@@ -14,9 +14,9 @@
         </a>
         <div class="collapse" id="form-elements">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="basic_elements.html">Ajouter Catégorie</a></li>
-            <li class="nav-item"><a class="nav-link" href="advanced_elements.html">Ajouter Produit</a></li>
-            <li class="nav-item"><a class="nav-link" href="validation.html">Ajouter slider</a></li>
+            <li class="nav-item"><a class="nav-link" href={{URL::to('/ajoutercategorie')}}>Ajouter Catégorie</a></li>
+            <li class="nav-item"><a class="nav-link" href={{URL::to('/ajouterproduit')}}>Ajouter Produit</a></li>
+            <li class="nav-item"><a class="nav-link" href={{URL::to('/ajouterslider')}}>Ajouter slider</a></li>
             {{-- <li class="nav-item"><a class="nav-link" href="wizard.html">Wizard</a></li> --}}
           </ul>
         </div>
