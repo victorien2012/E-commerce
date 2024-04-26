@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect()->route('home');
+});
 
 
-Route::get('/accueil', 'ClientController@accueil');
+Route::get('/accueil', 'ClientController@accueil')->name('home');
 Route::get('/admin', 'AdminController@admin');
 Route::get('/produit', 'ClientController@produit');
 Route::get('/paiement', 'ClientController@paiement');
