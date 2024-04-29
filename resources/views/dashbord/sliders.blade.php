@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>JustDo Admin</title>
+  <title>Sliders</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="backend/css/themify-icons.css">
   <link rel="stylesheet" href="backend/css/vendor.bundle.base.css">
@@ -18,10 +19,9 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
-<title>@yield('title')</title>
+
 <body>
   <div class="container-scroller">
-    @include('include.navbar1')
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
@@ -53,7 +53,6 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      @include('include.navbar2')
       <!-- partial:../../partials/_settings-panel.html -->
       <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
@@ -143,88 +142,122 @@
             </div>
           </div>
           <!-- To do section tab ends -->
-          <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
-            <div class="d-flex align-items-center justify-content-between border-bottom">
-              <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
-              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See All</small>
-            </div>
-            <ul class="chat-list">
-              <li class="list active">
-                <div class="profile"><img src="images/faces/face1.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Thomas Douglas</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">19 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
-                <div class="info">
-                  <div class="wrapper d-flex">
-                    <p>Catherine</p>
-                  </div>
-                  <p>Away</p>
-                </div>
-                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
-                <small class="text-muted my-auto">23 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="images/faces/face3.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Daniel Russell</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">14 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
-                <div class="info">
-                  <p>James Richardson</p>
-                  <p>Away</p>
-                </div>
-                <small class="text-muted my-auto">2 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="images/faces/face5.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Madeline Kennedy</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">5 min</small>
-              </li>
-              <li class="list">
-                <div class="profile"><img src="images/faces/face6.jpg" alt="image"><span class="online"></span></div>
-                <div class="info">
-                  <p>Sarah Graves</p>
-                  <p>Available</p>
-                </div>
-                <small class="text-muted my-auto">47 min</small>
-              </li>
-            </ul>
-          </div>
+         
           <!-- chat tab ends -->
         </div>
       </div>
-      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">
+              <i class="ti-home menu-icon"></i>
+              <span class="menu-title">Tableau de Bord</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="ti-clipboard menu-icon"></i>
+              <span class="menu-title">Création</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href={{URL::to('/ajoutercategorie')}}>Ajouter Catégorie</a></li>
+                <li class="nav-item"><a class="nav-link" href={{URL::to('/ajouterproduit')}}>Ajouter Produit</a></li>
+                <li class="nav-item"><a class="nav-link" href={{URL::to('/ajouterslider')}}>Ajouter slider</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="wizard.html">Wizard</a></li> --}}
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="ti-layout menu-icon"></i>
+              <span class="menu-title">Affichage</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href={{URL::to('/categories')}}>Catégories</a></li>
+                  <li class="nav-item"> <a class="nav-link" href={{URL::to('/produits')}}>Produits</a></li>
+                  <li class="nav-item"> <a class="nav-link" href={{URL::to('/sliders')}}>Sliders</a></li>
+                  <li class="nav-item"> <a class="nav-link" href={{URL::to('/commandes')}}>Commandes</a></li>
+                </ul>
+              </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+     <div class="main-panel">
+        <div class="content-wrapper">
 
 
 
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Sliders</h4>
+              <div class="row">
+                <div class="col-12">
+                  <div class="table-responsive">
+                    <table id="order-listing" class="table">
+                      <thead>
+                        <tr>
+                            <th>Order #</th>
+                            <th>Image</th>
+                            <th>Description 1</th>
+                            <th>Description 2</th>
+                            <th>status</th>
+                            <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2012/08/03</td>
+                            <td>2012/08/03</td>
+                            <td>2012/08/03</td>
+                         
+                            
+                            <td>
+                              <label class="badge badge-info">On hold</label>
+                            </td>
+                            <td>
+                              <button class="btn btn-outline-primary">Voir</button>
+                              <button class="btn btn-outline-danger">Supprimer</button>
+                            </td>
+                        </tr>
+                      
+                      
+                       
+                       
+                       
+                     
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-@yield('content')
-
-
-
-
+          
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        @include('include.adminfooter')
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
   <!-- plugins:js -->
   <script src="backend/js/vendor.bundle.base.js"></script>
   <script src="backend/js/vendor.bundle.addons.js"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="backend/js/off-canvas.js"></script>
   <script src="backend/js/hoverable-collapse.js"></script>
@@ -233,10 +266,8 @@
   <script src="backend/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  @yield('scripts')
-  <script src="backend/js/dashboard.js"></script>
+  <script src="backend/js/data-table.js"></script>
   <!-- End custom js for this page-->
 </body>
 
 </html>
-
