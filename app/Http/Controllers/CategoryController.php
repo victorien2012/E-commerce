@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Category;
+
 
 class CategoryController extends Controller
 {
@@ -12,13 +14,27 @@ class CategoryController extends Controller
     }
 
     public function sauvercategorie(Request $request){
-        // return view('dashbord.data-table');
+
+    // $this->validate($request, ['nom_categorie'=>'required']);
+
+        $categorie= New category();
+
+        $categorie->nom_categorie=$request->input('category_name');
+        // dd($request->input('category_name'));
+        $categorie->save();
+        return redirect('/ajoutercategorie')->with('status', 'la categorie '. $categorie->nom_categorie. ' a été ajouté');
+
+      
+        
     }
 
 
-public function categories(){
+    public function categories(){
 
-    return view ('Dashbord.categories');
-}
+
+        $categories= category::get();
+
+        return view ('dashbord.categories')->with('categories', '$categories');
+    }
 
 }
