@@ -23,7 +23,7 @@ class AdminController extends Controller
     }
 
 
-    public function datatable(){
-        return view('dashbord.data-table');
+    public function commandes(){
+        return view('dashbord.commandes');
     }
 }

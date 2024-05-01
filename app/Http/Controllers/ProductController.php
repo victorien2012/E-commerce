@@ -14,4 +14,9 @@ class ProductController extends Controller
     public function sauverproduit(Request $request){
         
     }
+    
+
+    public function produits(){
+        return view('dashbord.produits');
+    }
 }

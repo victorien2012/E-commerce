@@ -13,6 +13,23 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Ajouter Catégorie</h4>
+    @if (Session::has('status'))
+         <div class="alert alert-success">
+            {{Session::get('status')}}
+        </div>
+    @endif
+
+    {{-- @if (count($errors)>0);
+
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+          @endforeach
+      </ul>
+      </div>
+    @endif --}}
+
                 {!! Form::open(['action' =>'CategoryController@sauvercategorie', 'method'=> 'POST', 'class' => 'cmxform', 'id'=>'commentForm']) !!}
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -32,6 +49,6 @@
 
 
 @section('scripts')
-<script src="backend/js/form-validation.js"></script>
-<script src="backend/js/bt-maxLength.js"></script>
+{{-- <script src="backend/js/form-validation.js"></script>
+<script src="backend/js/bt-maxLength.js"></script> --}}
 @endsection

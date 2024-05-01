@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +43,7 @@ Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
 Route::get('ajouterslider', 'SliderController@ajouterslider');
 Route::post('/sauverslider', 'SliderController@sauverslider');
+Route::get('/categories', 'CategoryController@categories');
+Route::get('/produits', 'ProductController@produits');
+Route::get('/sliders', 'SliderController@sliders');
+Route::get('/commandes', 'AdminController@commandes');
