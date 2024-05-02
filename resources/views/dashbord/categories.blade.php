@@ -90,7 +90,7 @@
             </div>
           </div>
           <!-- To do section tab ends -->
-         
+
           <!-- chat tab ends -->
         </div>
       </div>
@@ -158,22 +158,22 @@
                       </thead>
                       <tbody>
 
-                        @foreach ($categories as $category)
-                        <tr>
-                          <td>1</td>
-                          <td>{{$categories->nom_categorie}}</td>
-                          
-                          {{-- <td>
-                            <label class="badge badge-info">On hold</label>
-                          </td> --}}
-                          <td>
-                            <button class="btn btn-outline-primary">Modifer</button>
-                            <button class="btn btn-outline-DANGER">SUpprimer</button>
-                          </td>
-                          
-                      </tr>
-                        @endforeach
-                  
+                      @foreach ($categories as $category)
+                         <tr>
+                              <td>{{$loop->iteration}}</td>
+                              <td>{{$category->nom_categorie}}</td>
+
+                              {{-- <td>
+                                <label class="badge badge-info">On hold</label>
+                              </td> --}}
+                              <td>
+                                <button class="btn btn-outline-primary">Modifer</button>
+                                <button class="btn btn-outline-DANGER">SUpprimer</button>
+                              </td>
+
+                        </tr>
+                      @endforeach
+
                       </tbody>
                     </table>
                   </div>
@@ -182,7 +182,7 @@
             </div>
           </div>
 
-          
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->

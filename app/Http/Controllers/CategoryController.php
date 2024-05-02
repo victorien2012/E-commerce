@@ -20,21 +20,19 @@ class CategoryController extends Controller
         $categorie= New category();
 
         $categorie->nom_categorie=$request->input('category_name');
-        // dd($request->input('category_name'));
+         dd($request->input('category_name'));
         $categorie->save();
         return redirect('/ajoutercategorie')->with('status', 'la categorie '. $categorie->nom_categorie. ' a été ajouté');
-
-      
-        
     }
 
-
+// methode pour afficher les categories
     public function categories(){
 
 
         $categories= category::get();
 
-        return view ('dashbord.categories')->with('categories', '$categories');
+
+        return view ('dashbord.categories')->with('categories', $categories);
     }
 
 }
