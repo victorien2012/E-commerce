@@ -216,12 +216,12 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="ti-clipboard menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Créations</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="basic_elements.html">Basic Elements</a></li>       
+                <li class="nav-item"><a class="nav-link" href="basic_elements.html">Basic Elements</a></li>
                 <li class="nav-item"><a class="nav-link" href="advanced_elements.html">Advanced Elements</a></li>
                 <li class="nav-item"><a class="nav-link" href="validation.html">Validation</a></li>
                 <li class="nav-item"><a class="nav-link" href="wizard.html">Wizard</a></li>
@@ -231,7 +231,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="ti-layout menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Affichages</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
@@ -252,13 +252,13 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                
+
                 </div>
-              
-         
 
 
-          
+
+
+
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-body">

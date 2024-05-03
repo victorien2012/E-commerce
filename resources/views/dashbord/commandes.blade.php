@@ -90,7 +90,7 @@
             </div>
           </div>
           <!-- To do section tab ends -->
-         
+
           <!-- chat tab ends -->
         </div>
       </div>
@@ -156,7 +156,7 @@
                             <th>Adresse</th>
                             <th>Catégorie Produit</th>
                             <th>Panier</th>
-                            <th>paimennt id</th>
+                            <th>paiement id</th>
                             <th>Actions</th>
                         </tr>
                       </thead>
@@ -168,7 +168,7 @@
                             <td>2012/08/03</td>
                             <td>2012/08/03</td>
                             <td>2012/08/03</td>
-                            
+
                             {{-- <td>
                               <label class="badge badge-info">On hold</label>
                             </td> --}}
@@ -177,13 +177,13 @@
                               {{-- <button class="btn btn-outline-danger">Supprimer</button> --}}
                             </td>
                         </tr>
-                      
-                      
-                       
-                       
-                       
-                     
-                       
+
+
+
+
+
+
+
                       </tbody>
                     </table>
                   </div>
@@ -192,7 +192,7 @@
             </div>
           </div>
 
-          
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->

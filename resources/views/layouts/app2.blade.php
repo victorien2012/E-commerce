@@ -32,7 +32,7 @@
           <span class="ti-layout-grid2"></span>
         </button>
         <ul class="navbar-nav navbar-nav-right">
-          
+
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="images/faces/face28.jpg" alt="profile"/>
@@ -51,7 +51,7 @@
       </div>
     </nav>
 
-    
+
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:../../partials/_settings-panel.html -->
@@ -143,7 +143,7 @@
             </div>
           </div>
           <!-- To do section tab ends -->
-         
+
           <!-- chat tab ends -->
         </div>
       </div>
@@ -160,7 +160,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="ti-clipboard menu-icon"></i>
-              <span class="menu-title">Création</span>
+              <span class="menu-title">Créations</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
@@ -175,7 +175,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="ti-layout menu-icon"></i>
-              <span class="menu-title">Affichage</span>
+              <span class="menu-title">Affichages</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
