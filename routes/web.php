@@ -34,16 +34,23 @@ Route::get('/admin', 'AdminController@admin');
 Route::get('/login', 'AdminController@login');
 Route::get('/validation', 'AdminController@validation');
 Route::get('/data-table', 'AdminController@datatable');
+Route::get('/commandes', 'AdminController@commandes');
 
-
-//ajouter produit
+//categories
 Route::get('/ajoutercategorie', 'CategoryController@ajoutercategorie');
 Route::post('/sauvercategorie', 'CategoryController@sauvercategorie');
+Route::get('/categories', 'CategoryController@categories');
+Route::get('/edit_categorie/{id}','CategoryController@edit_categorie');
+Route::post('/modifiercategorie', 'CategoryController@modifiercategorie');
+
+
+//produit
 Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
+Route::get('/produits', 'ProductController@produits');
+
+//slider
 Route::get('ajouterslider', 'SliderController@ajouterslider');
 Route::post('/sauverslider', 'SliderController@sauverslider');
-Route::get('/categories', 'CategoryController@categories');
-Route::get('/produits', 'ProductController@produits');
 Route::get('/sliders', 'SliderController@sliders');
-Route::get('/commandes', 'AdminController@commandes');
+

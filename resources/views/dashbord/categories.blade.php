@@ -145,6 +145,11 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Catégorie</h4>
+                @if (Session::has('status'))
+                    <div class="alert alert-success">
+                        {{Session::get('status')}}
+                    </div>
+                @endif
               <div class="row">
                 <div class="col-12">
                   <div class="table-responsive">
@@ -166,12 +171,12 @@
                               {{-- <td>
                                 <label class="badge badge-info">On hold</label>
                               </td> --}}
-                              <td>
-                                <button class="btn btn-outline-primary">Modifer</button>
-                                <button class="btn btn-outline-DANGER">SUpprimer</button>
-                              </td>
+                             <td>
+                                 <button class="btn btn-outline-primary" onclick="window.location ='{{url('/edit_categorie/'. $category->id)}}'">Modifer</button>
+                                 <button class="btn btn-outline-DANGER">SUpprimer</button>
+                             </td>
 
-                        </tr>
+                         </tr>
                       @endforeach
 
                       </tbody>
