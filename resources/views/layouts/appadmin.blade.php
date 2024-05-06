@@ -7,16 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>JustDo Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="backend/css/themify-icons.css">
-  <link rel="stylesheet" href="backend/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="backend/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="{{asset('backend/css/themify-icons.css')}}">
+  <link rel="stylesheet" href="{{asset('backend/css/vendor.bundle.base.css')}}">
+  <link rel="stylesheet" href="{{asset('backend/css/vendor.bundle.addons.css')}}">
+
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="backend/css/style.css">
+  <link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" />
 </head>
 <title>@yield('title')</title>
 <body>
@@ -33,7 +34,7 @@
           <span class="ti-layout-grid2"></span>
         </button>
         <ul class="navbar-nav navbar-nav-right">
-          
+
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="images/faces/face28.jpg" alt="profile"/>
@@ -205,7 +206,7 @@
           <!-- chat tab ends -->
         </div>
       </div>
-      
+
 
 
 
@@ -220,22 +221,23 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="backend/js/vendor.bundle.base.js"></script>
-  <script src="backend/js/vendor.bundle.addons.js"></script>
+  <script src="{{asset('backend/js/vendor.bundle.base.js')}}"></script>
+  <script src="{{asset('backend/js/vendor.bundle.addons.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="backend/js/off-canvas.js"></script>
-  <script src="backend/js/hoverable-collapse.js"></script>
-  <script src="backend/js/template.js"></script>
-  <script src="backend/js/settings.js"></script>
-  <script src="backend/js/todolist.js"></script>
+  <script src="{{asset('backend/js/off-canvas.js')}}"></script>
+  <script src="{{asset('backend/js/hoverable-collapse.js')}}"></script>
+  <script src="{{asset('backend/js/template.js')}}"></script>
+  <script src="{{asset('backend/js/settings.js')}}"></script>
+  <script src="{{asset('backend/js/todolist.js')}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   @yield('scripts')
-  <script src="backend/js/dashboard.js"></script>
+  <script src="{{asset('backend/js/dashboard.js')}}"></script>
   <!-- End custom js for this page-->
+  </div>
 </body>
 
 </html>

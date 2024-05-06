@@ -90,7 +90,7 @@
             </div>
           </div>
           <!-- To do section tab ends -->
-         
+
           <!-- chat tab ends -->
         </div>
       </div>
@@ -136,59 +136,112 @@
           </li>
         </ul>
       </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-
-
-
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Catégorie</h4>
-              <div class="row">
-                <div class="col-12">
-                  <div class="table-responsive">
-                    <table id="order-listing" class="table">
-                      <thead>
-                        <tr>
-                            <th>Order #</th>
-                            <th>Nom de la categorie</th>
-                            <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-
-                        @foreach ($categories as $category)
-                        <tr>
-                          <td>1</td>
-                          <td>{{$categories->nom_categorie}}</td>
-                          
-                          {{-- <td>
-                            <label class="badge badge-info">On hold</label>
-                          </td> --}}
-                          <td>
-                            <button class="btn btn-outline-primary">Modifer</button>
-                            <button class="btn btn-outline-DANGER">SUpprimer</button>
-                          </td>
-                          
-                      </tr>
-                        @endforeach
-                  
-                      </tbody>
-                    </table>
-                  </div>
+      <!-- partial --><div class="main-panel">
+            <div class="content-wrapper">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Catégorie</h4>
+                        @if (Session::has('status'))
+                            <div class="alert alert-success">
+                                {{ Session::get('status') }}
+                            </div>
+                        @endif
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="order-listing" class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>Order #</th>
+                                            <th>Nom de la categorie</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($categories as $category)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $category->nom_categorie }}</td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modifierModal{{$category->id}}">Modifier</button>
+                                                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#supprimerModal{{$category->id}}">Supprimer</button>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          
+
+                @foreach ($categories as $category)
+                    <div class="modal fade" id="modifierModal{{ $category->id }}" tabindex="-1" role="dialog" aria-labelledby="modifierModalLabel{{ $category->id }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modifierModalLabel{{ $category->id }}">Modifier la catégorie</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="{{route('editcategorie')}}" method="post">
+                                     {{csrf_field()}}
+                                        <div class="form-group">
+                                            <label for="nom">Nom de la catégorie</label>
+                                            <input type="hidden" name="id" value="{{ $category->id }}">
+                                            <input type="text" class="form-control" name="category_name" placeholder="Nom de la catégorie" value="{{ $category->nom_categorie }}">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                            <button type="submit" class="btn btn-primary">Enregistrer</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+                <!-- Modal Supprimer -->
+                @foreach ($categories as $category)
+                    <div class="modal fade" id="supprimerModal{{ $category->id }}" tabindex="-1" role="dialog" aria-labelledby="supprimerModalLabel{{ $category->id }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="supprimerModalLabel{{$category->id}}">Supprimer la catégorie</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Êtes-vous sûr de vouloir supprimer cette catégorie ?
+                                </div>
+                                <div class="modal-footer">
+                                    <form action="{{route('deletecategorie')}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="id" value="{{ $category->id }}">
+                                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            @include('include.adminfooter')
+            <!-- partial -->
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        @include('include.adminfooter')
-        <!-- partial -->
-      </div>
+
+    </div>
       <!-- main-panel ends -->
     </div>
     <!-- page-body-wrapper ends -->
@@ -208,6 +261,8 @@
   <!-- Custom js for this page-->
   <script src="backend/js/data-table.js"></script>
   <!-- End custom js for this page-->
+
+
 </body>
 
 </html>
