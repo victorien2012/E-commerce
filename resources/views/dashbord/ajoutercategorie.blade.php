@@ -38,7 +38,7 @@
                 </div>
                 {!! Form::submit('Ajouter', ['class'=>'btn btn-primary']) !!} <!-- Correction ici -->
               {!! Form::close() !!}
-              
+
               </div>
             </div>
           </div>

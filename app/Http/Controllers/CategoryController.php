@@ -15,7 +15,7 @@ class CategoryController extends Controller
 
     public function sauvercategorie(Request $request){
 
-    // $this->validate($request, ['nom_categorie'=>'required']);
+//         $this->validate($request,['categorie_name'=>'required|unique:categorie']);
 
         $categorie= New category();
 
