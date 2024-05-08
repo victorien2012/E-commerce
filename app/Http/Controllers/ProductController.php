@@ -7,7 +7,8 @@ use App\Category;
 
 class ProductController extends Controller
 {
-    public function ajouterproduit(){
+    public function ajouterproduit()
+    {
 
         $categories = Category::get();
 
@@ -15,26 +16,23 @@ class ProductController extends Controller
     }
 
 
-    public function sauverproduit(Request $request){
+    public function sauverproduit(Request $request)
+    {
 
 //       dd($request->all());
-        $categorie= New category();
+        $categorie = new category();
+//
+        $request->validate(['product_name' => 'required',
+            'product_price' => 'required',
+            'product_category' => 'required',
+            'product_image' => 'required|nullable|max::1999']);
 
-$this->validate($request, [  'product_name'=>'required',
-                             'product_price'=>'required',
-                             'product_category'=>'required',
-                             'product_image'=>'required|nullable|max::1999',
-        ]);
-
-
-//         dd($request->input('category_name'))
-//        $categorie->save();
-//        return redirect('/ajouterproduit')->with('status', 'le produit '. $produit->nom_produit. ' a été ajouté avec succès');
 
     }
 
 
-    public function produits(){
+    public function produits()
+    {
         return view('dashbord.produits');
     }
 }

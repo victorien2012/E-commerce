@@ -9,6 +9,8 @@
 
     <div class="content-wrapper">
 
+{{--        <div class="col-lg-12">--}}
+        <div class="container col-lg-6">
         <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
@@ -19,7 +21,7 @@
         </div>
     @endif
 
-    {{-- @if (count($errors)>0);
+     @if (count($errors)>0);
 
       <div class="alert alert-danger">
         <ul>
@@ -28,7 +30,7 @@
           @endforeach
       </ul>
       </div>
-    @endif --}}
+    @endif
 
                 {!! Form::open(['action' =>'CategoryController@sauvercategorie', 'method'=> 'POST', 'class' => 'cmxform', 'id'=>'commentForm']) !!}
                 {{ csrf_field() }}

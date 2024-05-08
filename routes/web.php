@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-//cient
+//client
 
 Route::get('/accueil', 'ClientController@accueil')->name('home');
 Route::get('/produit', 'ClientController@produit');

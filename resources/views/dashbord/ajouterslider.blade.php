@@ -6,10 +6,11 @@
 
 @section('content')
 <div class="main-panel">
-
+0
     <div class="content-wrapper">
 
-        <div class="col-lg-12">
+{{--        <div class="col-lg-12">--}}
+        <div class="container col-lg-6">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Ajouter Slider</h4>
@@ -19,7 +20,7 @@
                   {{ Form::label('', 'description 1', ['for'=>'cname']) }}
                   {{ Form::text('description1', '', ['class'=>'form-control', 'id'=>'cname']) }}
                 </div>
-                
+
 
               <div class="form-group">
                 {{ Form::label('', 'decription 2', ['for'=>'cname']) }}
@@ -28,7 +29,7 @@
 
 
 
-    
+
 
 
               <div class="form-group">
@@ -47,6 +48,6 @@
 
 
 @section('scripts')
-<script src="backend/js/form-validation.js"></script>
-<script src="backend/js/bt-maxLength.js"></script>
+{{--<script src="backend/js/form-validation.js"></script>--}}
+{{--<script src="backend/js/bt-maxLength.js"></script>--}}
 @endsection
