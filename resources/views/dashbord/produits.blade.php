@@ -208,6 +208,11 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Produits</h4>
+                        @if (Session::has('status'))
+                            <div class="alert alert-success">
+                                {{ Session::get('status') }}
+                            </div>
+                        @endif
                         <div class="row">
                             <div class="col-12">
                                 <div class="table-responsive">
@@ -224,12 +229,20 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+
+                                        @foreach ($produits as $produits)
+{{--                                            @php--}}
+{{--                                            dd($produits->image[0]->nom);--}}
+{{--                                            @endphp--}}
                                         <tr>
-                                            <td>1</td>
-                                            <td>2012/08/03</td>
-                                            <td>2012/08/03</td>
-                                            <td>2012/08/03</td>
-                                            <td>1500 fcfa</td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td><img src="{{asset('storage/'.$produits->image[0]->nom) }}"
+                                                     alt=""></td>
+                                            <td>{{ $produits->nom }}</td>
+                                            <td>{{ $produits->categorie_id}}</td>
+                                            <td>{{ $produits->prix}}FCFA</td>
+                                            <td>{{ $produits->statut}}</td>
+
 
 
                                             <td>
@@ -241,7 +254,7 @@
                                             </td>
                                         </tr>
 
-
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

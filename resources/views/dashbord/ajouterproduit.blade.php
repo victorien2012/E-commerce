@@ -13,8 +13,15 @@
                 <div class="card">
                     <div class="card-body">
 
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
                         <h4 class="card-title">Ajouter Produit</h4>
-                        {!! Form::open(['action' =>'ProductController@sauverproduit', 'method'=> 'POST', 'class' => 'cmxform', 'id'=>'commentForm']) !!}
+                        {!! Form::open(['action' =>'ProductController@sauverproduit', 'method'=> 'POST', 'class' => 'cmxform', 'id'=>'commentForm', 'enctype'=>'multipart/form-data']) !!}
+
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -41,8 +48,8 @@
                                 <option></option>
                                 @foreach($categories as $categories)
 
-                                    <option value="">{{$categories->nom_categorie}}</option>
-                                    ²
+                                    <option value="{{$categories->id}}">{{$categories->nom_categorie}}</option>
+
                                 @endforeach
 
                                 @error('product_category')
@@ -53,7 +60,8 @@
 
 
                         <div class="form-group">
-                            {{ Form::label('', 'Image', ['for'=>'cname']) }}
+{{--                            <input type="file" name="product_image" id="">--}}
+                            {{ Form::label('', 'image', ['for'=>'cname']) }}
                             {{ Form::file('product_image', ['class'=>'form-control', 'id'=>'cname']) }}
                         </div>
                         {!! Form::submit('Ajouter', ['class'=>'btn btn-primary']) !!}
