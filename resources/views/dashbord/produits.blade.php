@@ -239,7 +239,7 @@
                                             <td><img src="{{asset('storage/'.$produits->image[0]->nom) }}"
                                                      alt=""></td>
                                             <td>{{ $produits->nom }}</td>
-                                            <td>{{ $produits->categorie_id}}</td>
+                                            <td>{{ $produits->categorie->nom_categorie}}</td>
                                             <td>{{ $produits->prix}}FCFA</td>
                                             <td>{{ $produits->statut}}</td>
 
@@ -249,7 +249,7 @@
                                                 <label class="badge badge-info">On hold</label>
                                             </td>
                                             <td>
-                                                <button class="btn btn-outline-primary">Voir</button>
+                                                <button class="btn btn-outline-primary">Modifier</button>
                                                 <button class="btn btn-outline-danger">Supprimer</button>
                                             </td>
                                         </tr>

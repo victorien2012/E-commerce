@@ -27,7 +27,7 @@
                             {{ Form::label('', 'Nom de la Catégorie', ['for'=>'cname']) }}
                             {{ Form::text('category_name', $categorie->nom_categorie, ['class'=>'form-control', 'id'=>'cname']) }}
                         </div>
-                        {!! Form::submit('Modifier', ['class'=>'btn btn-primary']) !!} <!-- Correction ici -->
+                        {!! Form::submit('Modifier', ['class'=>'btn btn-primary']) !!}
                         {!! Form::close() !!}
 
                     </div>

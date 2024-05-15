@@ -28,7 +28,7 @@ class ProductController extends Controller
         ]);
 
         // Enregistrement de l'image
-        $imagePath = $request->file('product_image')->store('public/images');
+        $imagePath = $request->file('product_image')->store('images');
 
 
         // Création de l'entrée des données dans la table produit
@@ -54,12 +54,21 @@ class ProductController extends Controller
     {
 
         $produits = Produit::with('image')->get();
-
-        //$produits= Produit::find(6)->image;
-//        dd($produits);
+//        $produits = Produit::with('categorie')->get();
+//        $categorie = Category::with('product')->get();
+        $_produits = Produit::all();
+//        dd($_produits[1]->categorie->nom_categorie,$produits);
         return view('dashbord.produits')->with('produits', $produits);
     }
 
+
+    //editer un produit
+    public function edit_produits($id){
+
+        $produits = Produit::find($id);
+
+        return view('dashbord.editproduits')->with('produits', $produits);
+    }
 
 
 }
