@@ -35,7 +35,7 @@ class CategoryController extends Controller
         return view ('dashbord.categories')->with('categories', $categories);
     }
 
-    public function edit_categorie($id){
+    public function edit_ategorie($id){
 
         $categorie = category::find($id);
 

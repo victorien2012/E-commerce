@@ -63,12 +63,26 @@ class ProductController extends Controller
 
 
     //editer un produit
-    public function edit_produits($id){
+    public function editproduits($id)
+    {
 
-        $produits = Produit::find($id);
+        $produit = produit::find($id);
+        $categories = category::all()->pluck('nom_categorie', 'nom_categorie');
 
-        return view('dashbord.editproduits')->with('produits', $produits);
+        return view('dashbord.editproduits')->with('produit', $produit)->with('categories', $categories);
     }
 
+    //methode pour Post pour enregistrer la donnée modifiée
+    public function modifierproduits(Request $request){
+        // $this->validate($request, ['nom_categorie'=>'required']);
 
+        $produits= Produit::find($request->input('id'));
+        $categorie= Category::find($request->input('product_category'));
+
+//        $categorie->nom_categorie=$request->input('category_name');
+
+        $produits->update();
+        return back()->with('status', 'le produit '. $produits. ' a été modifié avec succès !');
+
+    }
 }

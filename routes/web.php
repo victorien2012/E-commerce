@@ -49,7 +49,8 @@ Route::post('/delete-categorie', 'CategoryController@deletecategorie')->name('de
 Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
 Route::get('/produits', 'ProductController@produits');
-Route::get('/edit_produits/{id}','ProductController@edit_produits');
+Route::get('/editproduits/{id}','ProductController@editproduits')->name('edit');
+Route::post('/modifier-produits', 'ProductController@modifierproduits')->name('editproduits');
 
 //slider
 Route::get('ajouterslider', 'SliderController@ajouterslider');

@@ -224,7 +224,7 @@
                                             <th>Nom du produit</th>
                                             <th>Catégorie Produit</th>
                                             <th>Prix</th>
-                                            <th>status</th>
+                                            <th>statut</th>
                                             <th>Actions</th>
                                         </tr>
                                         </thead>
@@ -241,16 +241,20 @@
                                             <td>{{ $produits->nom }}</td>
                                             <td>{{ $produits->categorie->nom_categorie}}</td>
                                             <td>{{ $produits->prix}}FCFA</td>
-                                            <td>{{ $produits->statut}}</td>
 
 
+                                                    <td>
+                                                        @if($produits->statut ==1)
+                                                            <label class="badge badge-success">Acitvé</label>
+                                                        @else
+                                                            <label class="badge badge-danger">Désactivé</label>
+                                                        @endif
+                                                    </td>
 
                                             <td>
-                                                <label class="badge badge-info">On hold</label>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-outline-primary">Modifier</button>
-                                                <button class="btn btn-outline-danger">Supprimer</button>
+{{--                                                <button class="btn btn-outline-primary" onclick="window.location='{{url('/editproduits/' .$produits->id)}}'">Modifier</button>--}}
+                                                <button class="btn btn-outline-danger"><a href="{{URL::to('/editproduits', $produits->id)}}">MODIFIER</a></button>
+                                                <button class="btn btn-outline-danger"{{  $produits->id }}>Supprimer</button>
                                             </td>
                                         </tr>
 
