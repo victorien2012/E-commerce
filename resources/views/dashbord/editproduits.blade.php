@@ -44,9 +44,23 @@
                         </div>
 
 
+{{--                            @php dd($categories) @endphp--}}
                         <div class="form-group">
-                            {{ Form::label('', 'Catégorie du produit') }}
-{{--                            {{ Form::select('product_category', $produit->categorie->nom_categorie,['class'=>'form-control']) }}--}}
+{{--                            {{ Form::label('', 'Catégorie du produit') }}--}}
+{{--                            {{ Form::select('product_category', $produit->categorie,['class'=>'form-control']) }}--}}
+                            <select name="product_category" id="" class="form-control">
+{{--                                <option></option>--}}
+                                <option selected value="{{$produit->categorie_id}}">{{$produit->categorie->nom_categorie}}</option>
+                                @foreach($categories as $categorie)
+
+                                    <option value="{{$categorie->id}}">{{$categorie->nom_categorie}}</option>
+
+                                @endforeach
+
+                                @error('product_category')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </select>
 
                         </div>
 
@@ -54,7 +68,9 @@
                         <div class="form-group">
                                                         <input type="file" name="product_image" id="">
                             {{ Form::label('', 'image', ['for'=>'cname']) }}
-{{--                            {{ Form::file('product_image', $image->produit_id, ['class'=>'form-control', 'id'=>'cname']) }}--}}
+                            <td><img src="{{asset('storage/'.$produit->image[0]->nom) }}"
+                                     alt=""></td>
+                            {{ Form::file('product_image', $produit->produit_image, ['class'=>'form-control', 'id'=>'cname']) }}
                         </div>
                         {!! Form::submit('Ajouter', ['class'=>'btn btn-primary']) !!}
                         {!! Form::close() !!}

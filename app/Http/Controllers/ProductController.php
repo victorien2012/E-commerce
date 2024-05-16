@@ -67,8 +67,9 @@ class ProductController extends Controller
     {
 
         $produit = produit::find($id);
-        $categories = category::all()->pluck('nom_categorie', 'nom_categorie');
-
+        $categories = category::where('id', '!=',$produit->categorie_id)->get();
+//        $categories = category::all();
+//        dd($categories);
         return view('dashbord.editproduits')->with('produit', $produit)->with('categories', $categories);
     }
 
