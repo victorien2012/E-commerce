@@ -66,10 +66,12 @@
 
 
                         <div class="form-group">
-                                                        <input type="file" name="product_image" id="">
+
                             {{ Form::label('', 'image', ['for'=>'cname']) }}
-                            <td><img src="{{asset('storage/'.$produit->image[0]->nom) }}"
-                                     alt=""></td>
+                            <td>
+                                <img src="{{ asset('storage/'.$produit->image[0]->nom) }}" alt="" style="max-width: 50px; height: auto;">
+                            </td>
+
                             {{ Form::file('product_image', $produit->produit_image, ['class'=>'form-control', 'id'=>'cname']) }}
                         </div>
                         {!! Form::submit('Ajouter', ['class'=>'btn btn-primary']) !!}

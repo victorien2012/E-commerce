@@ -229,36 +229,56 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($produits as $produit)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td><img src="{{ asset('storage/' . $produit->image[0]->nom) }}" alt=""></td>
+                                                <td>{{ $produit->nom }}</td>
+                                                <td>{{ $produit->categorie->nom_categorie }}</td>
+                                                <td>{{ $produit->prix }} FCFA</td>
+                                                <td>
+                                                    @if($produit->statut == 1)
+                                                        <label class="badge badge-success">Activé</label>
+                                                    @else
+                                                        <label class="badge badge-danger">Désactivé</label>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary">
+                                                        <a href="{{ URL::to('/editproduits', $produit->id) }}">MODIFIER</a>
+                                                    </button>
+                                                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#supprimerModal{{ $produit->id }}">Supprimer</button>
+                                                </td>
+                                            </tr>
 
-                                        @foreach ($produits as $produits)
-{{--                                            @php--}}
-{{--                                            dd($produits->image[0]->nom);--}}
-{{--                                            @endphp--}}
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td><img src="{{asset('storage/'.$produits->image[0]->nom) }}"
-                                                     alt=""></td>
-                                            <td>{{ $produits->nom }}</td>
-                                            <td>{{ $produits->categorie->nom_categorie}}</td>
-                                            <td>{{ $produits->prix}}FCFA</td>
-
-
-                                                    <td>
-                                                        @if($produits->statut ==1)
-                                                            <label class="badge badge-success">Acitvé</label>
-                                                        @else
-                                                            <label class="badge badge-danger">Désactivé</label>
-                                                        @endif
-                                                    </td>
-
-                                            <td>
-{{--                                                <button class="btn btn-outline-primary" onclick="window.location='{{url('/editproduits/' .$produits->id)}}'">Modifier</button>--}}
-                                                <button class="btn btn-outline-danger"><a href="{{URL::to('/editproduits', $produits->id)}}">MODIFIER</a></button>
-                                                <button class="btn btn-outline-danger"{{  $produits->id }}>Supprimer</button>
-                                            </td>
-                                        </tr>
-
+                                            <!-- Modal de suppression -->
+                                            <div class="modal fade" id="supprimerModal{{ $produit->id }}" tabindex="-1" role="dialog"
+                                                 aria-labelledby="supprimerModalLabel{{ $produit->id }}" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="supprimerModalLabel{{ $produit->id }}">Supprimer le produit</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Êtes-vous sûr de vouloir supprimer ce produit ?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <form action="{{ route('deleteproduits') }}" method="post">
+                                                                {{ csrf_field() }}
+                                                                <input type="hidden" name="id" value="{{ $produit->id }}">
+                                                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endforeach
+
+
+
                                         </tbody>
                                     </table>
                                 </div>
