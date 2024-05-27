@@ -15,7 +15,7 @@ class CreateSlidersTable extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('image_id')->references('id')->on('images');
+            $table->string('slider_image');
             $table->mediumText('description1');
             $table->mediumText('description2');
             $table->timestamps();

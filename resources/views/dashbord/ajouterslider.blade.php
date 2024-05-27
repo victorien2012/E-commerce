@@ -6,25 +6,40 @@
 
 @section('content')
 <div class="main-panel">
-0
+
     <div class="content-wrapper">
 
 {{--        <div class="col-lg-12">--}}
         <div class="container col-lg-6">
             <div class="card">
               <div class="card-body">
+
+                  @if (session('status'))
+                      <div class="alert alert-success">
+                          {{ session('status') }}
+                      </div>
+                  @endif
+
                 <h4 class="card-title">Ajouter Slider</h4>
-                {!! Form::open(['action' =>'SliderController@sauverslider', 'method'=> 'POST', 'class' => 'cmxform', 'id'=>'commentForm']) !!}
+                {!! Form::open(['action' =>'SliderController@sauverslider', 'method'=> 'POST', 'class' => 'cmxform', 'id'=>'commentForm', 'enctype'=>'multipart/form-data']) !!}
                 {{ csrf_field() }}
+
+
                 <div class="form-group">
                   {{ Form::label('', 'description 1', ['for'=>'cname']) }}
                   {{ Form::text('description1', '', ['class'=>'form-control', 'id'=>'cname']) }}
+                    @error('description1')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 </div>
 
 
               <div class="form-group">
-                {{ Form::label('', 'decription 2', ['for'=>'cname']) }}
+                {{ Form::label('', 'description 2', ['for'=>'cname']) }}
                 {{ Form::text('description2', '', ['class'=>'form-control', 'id'=>'cname']) }}
+                  @error('description2')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
               </div>
 
 

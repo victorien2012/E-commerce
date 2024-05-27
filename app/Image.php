@@ -13,4 +13,11 @@ class Image extends Model
 
         return $this->belongsTo(Produits::class);
     }
+
+
+    public function slider()
+    {
+        return $this->belongsTo(Slider::class);
+    }
+
 }
