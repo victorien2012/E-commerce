@@ -18,6 +18,7 @@ class CreateSlidersTable extends Migration
             $table->string('slider_image');
             $table->mediumText('description1');
             $table->mediumText('description2');
+            $table->string('statut', 200);
             $table->timestamps();
         });
     }

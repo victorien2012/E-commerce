@@ -27,7 +27,7 @@
                             {{Form::hidden('id', $produit->id)}}
                         <div class="form-group">
 
-                            {{ Form::label('', 'Nom de la Produit', ['for'=>'cname']) }}
+                            {{ Form::label('', 'Nom du Produit', ['for'=>'cname']) }}
                             {{ Form::text('product_name', $produit->nom, ['class'=>'form-control', 'id'=>'cname']) }}
                             @error('product_name')
                             <div class="alert alert-danger">{{ $message }}</div>

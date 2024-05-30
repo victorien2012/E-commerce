@@ -57,4 +57,8 @@ Route::post('/delete-produits', 'ProductController@deleteproduits')->name('delet
 Route::get('ajouterslider', 'SliderController@ajouterslider');
 Route::post('/sauverslider', 'SliderController@sauverslider');
 Route::get('/sliders', 'SliderController@sliders');
+Route::get('/editsliders/{id}','SliderController@editsliders')->name('edit');
+Route::post('/modifier-sliders', 'SliderController@modifiersliders')->name('editsliders');
+Route::post('/delete-sliders', 'SliderController@deletesliders')->name('deletesliders');
+
 
