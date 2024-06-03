@@ -62,3 +62,4 @@ Route::post('/modifier-sliders', 'SliderController@modifiersliders')->name('edit
 Route::post('/delete-sliders', 'SliderController@deletesliders')->name('deletesliders');
 
 
+

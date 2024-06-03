@@ -30,11 +30,12 @@ class SliderController extends Controller
         // Enregistrement de l'image
         $imagePath = $request->file('slider_image')->store('sliders');
 
+
         // Création de l'entrée des données dans la table sliders
         $sliders = Slider::create([
             'description1' => $validatedData['description1'],
             'description2' => $validatedData['description2'],
-            'slider_image' => $validatedData['slider_image'],
+            'slider_image' => $imagePath,
             'statut' => 1,
 
         ]);
@@ -44,7 +45,7 @@ class SliderController extends Controller
 
 
 
-//    methode pour affciher les données de la dable slider
+//    methode pour affciher les données de la Table slider
     public function  sliders()
     {
         $sliders = Slider::all();
@@ -61,6 +62,7 @@ class SliderController extends Controller
 
     }
 
+    //methode de modification de slider
     public function modifiersliders(Request $request)
     {
         // Valider les données entrantes
@@ -105,16 +107,15 @@ class SliderController extends Controller
         $sliders = slider::find($request->input('id'));
 
         if ($sliders) {
-            // Supprimer les images associées
-//            $images = Image::where('produit_id', $produits->id)->get();
+
             foreach ($sliders as $image) {
-                // Supprimer le fichier de l'image du stockage (optionnel)
+                // Supprimer le fichier de l'image du stockage
                 Storage::disk('public')->delete($image);
                 // Supprimer l'enregistrement de l'image
                 $sliders->delete();
             }
 
-            // Supprimer le slider
+            // Supprimer le slider de la table slider
             $sliders->delete();
 
             return back()->with('status', 'Le slider a été supprimé avec succès !');

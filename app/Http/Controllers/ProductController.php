@@ -45,7 +45,7 @@ class ProductController extends Controller
         $lastProduit = Produit::latest()->first();
 
         // Création de l'entrée de l'image dans la table image
-        $image = Image::create(['nom' => $imagePath, 'produit_id'=> $lastProduit->id]);
+        $image = Image::create(['lien' => $imagePath, 'produit_id'=> $lastProduit->id]);
 
         return redirect('/ajouterproduit')->with('status', 'Le produit '.$produit->nom.' a été ajouté avec succès !');
     }
@@ -101,7 +101,7 @@ class ProductController extends Controller
         if ($request->hasFile('product_image')) {
             $newImage = $request->file('product_image');
             $path = $newImage->store('images', 'public');
-            $image->nom = $path;
+            $image->lien = $path;
         }
 
         // Sauvegarder les modifications
@@ -127,7 +127,7 @@ class ProductController extends Controller
             $images = Image::where('produit_id', $produits->id)->get();
             foreach ($images as $image) {
                 // Supprimer le fichier de l'image du stockage (optionnel)
-                Storage::disk('public')->delete($image->nom);
+                Storage::disk('public')->delete($image->lien);
                 // Supprimer l'enregistrement de l'image
                 $image->delete();
             }

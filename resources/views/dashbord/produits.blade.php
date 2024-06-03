@@ -232,7 +232,7 @@
                                         @foreach ($produits as $produit)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img src="{{ asset('storage/' . $produit->image[0]->nom) }}" alt=""></td>
+                                                <td><img src="{{ asset('storage/' . $produit->image[0]->lien) }}" alt=""></td>
                                                 <td>{{ $produit->nom }}</td>
                                                 <td>{{ $produit->categorie->nom_categorie }}</td>
                                                 <td>{{ $produit->prix }} FCFA</td>

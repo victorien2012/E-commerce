@@ -231,7 +231,7 @@
                                         @foreach ($sliders as $slider)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td><img src="{{ asset('storage/images' . $slider->slider_image) }}" alt=""></td>
+                                                <td><img src="{{ asset('storage/' . $slider->slider_image) }}" alt=""></td>
                                                 <td>{{ $slider->description1 }}</td>
                                                 <td>{{ $slider->description2 }}</td>
 

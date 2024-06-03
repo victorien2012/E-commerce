@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Produit;
+use App\Image;
 use Illuminate\Http\Request;
+use App\Slider;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
     public function accueil(){
-        return view('client.accueil');
+        $sliders  = Slider::where('statut', 1)->get();
+        $produits  = Produit::where('statut', 1)->get();
+//
+        $produits = DB::table('produits')
+            ->join('images', 'produits.id', '=', 'images.produit_id')
+            ->where('produits.statut',1)->get();
+//dd($produits);
+
+        return view('client.accueil')->with('sliders',$sliders)->with('produits', $produits);
     }
 
     public function produit(){
