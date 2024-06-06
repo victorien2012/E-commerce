@@ -60,7 +60,7 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 			  <li class="nav-item active"><a href="{{URL::to('/accueil')}}" class="nav-link">Acceuil</a></li>
-			  <li class="nav-item active"><a href="{{URL::to('/produit')}}" class="nav-link">Produit</a></li>
+			  <li class="nav-item active"><a href="{{URL::to('/shop')}}" class="nav-link">Produit</a></li>
 			  <li class="nav-item active"><a href="{{URL::to('/')}}" class="nav-link">A propos</a></li>
 			  <li class="nav-item active"><a href="{{URL::to('/inscrire')}}" class="nav-link">login</a></li>
 
@@ -81,22 +81,22 @@
     {{-- @include('include.footer')  --}}
 
 
-      <script src="frontend/js/jquery.min.js"></script>
-      <script src="frontend/js/jquery-migrate-3.0.1.min.js"></script>
-      <script src="frontend/js/popper.min.js"></script>
-      <script src="frontend/js/bootstrap.min.js"></script>
-      <script src="frontend/js/jquery.easing.1.3.js"></script>
-      <script src="frontend/js/jquery.waypoints.min.js"></script>
-      <script src="frontend/js/jquery.stellar.min.js"></script>
-      <script src="frontend/js/owl.carousel.min.js"></script>
-      <script src="frontend/js/jquery.magnific-popup.min.js"></script>
-      <script src="frontend/js/aos.js"></script>
-      <script src="frontend/js/jquery.animateNumber.min.js"></script>
-      <script src="frontend/js/bootstrap-datepicker.js"></script>
-      <script src="frontend/js/scrollax.min.js"></script>
-      <script src="frontend/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-      <script src="frontend/js/google-map.js"></script>
-      <script src="frontend/js/main.js"></script>
+      <script src="{{asset('frontend/js/jquery.min.js')}}"></script>
+      <script src="{{asset('frontend/js/jquery-migrate-3.0.1.min.js')}}"></script>
+      <script src="{{asset('frontend/js/popper.min.js')}}"></script>
+      <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+      <script src="{{asset('frontend/js/jquery.easing.1.3.js')}}"></script>
+      <script src="{{asset('frontend/js/jquery.waypoints.min.js')}}"></script>
+      <script src="{{asset('frontend/js/jquery.stellar.min.js')}}"></script>
+      <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
+      <script src="{{asset('frontend/js/jquery.magnific-popup.min.js')}}"></script>
+      <script src="{{asset('frontend/js/aos.js')}}"></script>
+      <script src="{{asset('frontend/js/jquery.animateNumber.min.js')}}"></script>
+      <script src="{{asset('frontend/js/bootstrap-datepicker.js')}}"></script>
+      <script src="{{asset('frontend/js/scrollax.min.js')}}"></script>
+      <script src="{{asset('frontend/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false')}}"></script>
+      <script src="{{asset('frontend/js/google-map.js')}}"></script>
+      <script src="{{asset('frontend/js/main.js')}}"></script>
       @yield('scripts')
 
       </body>

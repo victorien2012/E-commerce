@@ -153,7 +153,7 @@
 					  <h3><a href="#">{{$produit->nom}}</a></h3>
 					  <div class="d-flex">
 						  <div class="pricing">
-							  <p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$produit->prix}}</span></p>
+							  <p class="price"><span class="mr-2 price-dc"></span><span class="price-sale">{{$produit->prix}} FCFA</span></p>
 						  </div>
 					  </div>
 					  <div class="bottom-area d-flex px-3">
@@ -209,8 +209,8 @@
   <div class="row justify-content-center mb-5 pb-3">
 	<div class="col-md-7 heading-section ftco-animate text-center">
 		<span class="subheading">Témoignage</span>
-	  <h2 class="mb-4">Notre client satisfait dit</h2>
-	  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+	  <h2 class="mb-4">Notre client satisfait</h2>
+	  <p>Les Spécialistes de la bonne bouffes en Côte D'ivoire</p>
 	</div>
   </div>
   <div class="row ftco-animate">

@@ -22,12 +22,14 @@ Route::get('/', function () {
 //client
 
 Route::get('/accueil', 'ClientController@accueil')->name('home');
-Route::get('/produit', 'ClientController@produit');
+Route::get('/shop', 'ClientController@shop')->name('shop');
+Route::get('/shop-categorie-{id}', 'ClientController@shopCategorie')->name('shopCategorie');
 Route::get('/paiement', 'ClientController@paiement');
 Route::get('/panier', 'ClientController@panier');
 Route::get('/contact', 'ClientController@contact');
 Route::get('/inscrire', 'ClientController@inscription');
 Route::get('/connecter', 'ClientController@connecter');
+//Route::get('/select_par_categorie/{{id}}','ClientController@select_par_categorie');
 
 //admin
 Route::get('/admin', 'AdminController@admin');
