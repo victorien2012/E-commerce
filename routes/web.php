@@ -29,7 +29,8 @@ Route::get('/panier', 'ClientController@panier');
 Route::get('/contact', 'ClientController@contact');
 Route::get('/inscrire', 'ClientController@inscription');
 Route::get('/connecter', 'ClientController@connecter');
-//Route::get('/select_par_categorie/{{id}}','ClientController@select_par_categorie');
+Route::get('ajouter_au_panier/{id}', 'ClientController@ajouter_au_panier')->name('ajouterAuPanier');
+
 
 //admin
 Route::get('/admin', 'AdminController@admin');

@@ -55,6 +55,7 @@ class ProductController extends Controller
     {
 
         $produits = Produit::with('image')->get();
+
 //        $produits = Produit::with('categorie')->get();
 //        $categorie = Category::with('product')->get();
         $_produits = Produit::all();
